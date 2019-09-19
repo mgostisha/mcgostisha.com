@@ -24,7 +24,7 @@ const Layout = ({ location, title, children }) => {
           }}
           to={`/`}
         >
-          {title}
+          {`${title}.blog`}
         </Link>
       </h1>
     );
@@ -44,7 +44,7 @@ const Layout = ({ location, title, children }) => {
           }}
           to={`/`}
         >
-          {title}
+          {`${title}${location.pathname === '/' ? '' : '.blog'}`}
         </Link>
       </h3>
     );
