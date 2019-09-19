@@ -1,6 +1,0 @@
-# This is Git's per-user configuration file.
-[user]
-	name = Martin Gostisha
-	email = martingostisha@gmail.com
-[core]
-	editor = emacs
