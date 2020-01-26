@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Bio from '../components/Bio';
-import SEO from '../components/SEO';
+import Header from '../components/Header';
 import Page from '../components/Page';
+import SEO from '../components/SEO';
 
 const HomePage = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -11,8 +12,8 @@ const HomePage = ({ data }) => {
   return (
     <Page title={siteTitle}>
       <SEO />
+      <Header showLarge title="mcgostisha" />
       <Bio />
-      <Link to={`/blog`}>.blog</Link>
     </Page>
   );
 };

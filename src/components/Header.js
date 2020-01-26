@@ -5,6 +5,7 @@ import { rhythm, scale } from '../utils/typography';
 
 const Header = ({ showLarge, title, to }) => {
   let header;
+  console.log('showLarge', showLarge);
 
   if (showLarge) {
     header = (
@@ -50,6 +51,6 @@ const Header = ({ showLarge, title, to }) => {
   }
 
   return header;
-}
+};
 
 export default Header;
