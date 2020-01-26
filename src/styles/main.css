@@ -1,0 +1,18 @@
+.crucial {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.crucial::before {
+  content: "THIS IS CRUCIAL";
+  position: absolute;
+  top: -11px;
+  left: 20px;
+  padding: 0 5px;
+  font-size: 12px;
+  background: white;
+  color: black;
+}

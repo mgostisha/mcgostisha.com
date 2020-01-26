@@ -2,7 +2,8 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Bio from '../components/Bio';
-import Layout from '../components/Layout';
+import BlogLayout from '../components/BlogLayout';
+import Page from '../components/Page';
 import SEO from '../components/SEO';
 import { rhythm } from '../utils/typography';
 
@@ -11,36 +12,38 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges;
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title=".blog" />
-      <Bio />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug;
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        );
-      })}
-    </Layout>
+    <Page>
+      <BlogLayout location={location} title={siteTitle}>
+        <SEO title=".blog" />
+        <Bio />
+        {posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug;
+          return (
+            <article key={node.fields.slug}>
+              <header>
+                <h3
+                  style={{
+                    marginBottom: rhythm(1 / 4),
+                  }}
+                >
+                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                    {title}
+                  </Link>
+                </h3>
+                <small>{node.frontmatter.date}</small>
+              </header>
+              <section>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt,
+                  }}
+                />
+              </section>
+            </article>
+          );
+        })}
+      </BlogLayout>
+    </Page>
   );
 };
 
