@@ -3,15 +3,11 @@ import React, { Fragment } from 'react';
 import Header from './Header';
 
 const BlogLayout = ({ location, children }) => {
-  const rootPath = '/blog';
-  
+  const showLarge = ['/', '/blog'];
+  console.log(showLarge.indexOf(location.pathname) > -1);
   return (
     <Fragment>
-      <Header
-        showLarge={location.pathname === rootPath}
-        title="mcgostisha.blog"
-        to="/blog"
-      />
+      <Header showLarge={showLarge.indexOf(location.pathname) > -1} title="mcgostisha.blog" to="/blog" />
       <main>{children}</main>
     </Fragment>
   );
