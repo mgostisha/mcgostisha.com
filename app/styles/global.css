@@ -50,3 +50,23 @@ h6 {
 #root {
   isolation: isolate;
 }
+
+/*
+  Main App Layout
+*/
+#root {
+  display: grid;
+  grid-template-columns: [viewport] 1fr [viewport];
+  grid-template-rows: 75px 1fr 75px;
+  height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+}
+
+#root > nav {
+  background: rebeccapurple;
+}
+#root > main {
+  background: olive;
+}
+#root > footer {
+  background: tomato;
+}
