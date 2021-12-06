@@ -10,8 +10,12 @@ import {
 } from "remix";
 import type { LinksFunction } from "remix";
 
+import Footer from '~/components/Footer';
+import Navbar from '~/components/Navbar';
+
 import globalStylesUrl from "~/styles/global.css";
 import darkStylesUrl from "~/styles/dark.css";
+import coreStylesUrl from "~/styles/core.css"
 
 /**
  * The `links` export is a function that returns an array of objects that map to
@@ -29,6 +33,7 @@ export let links: LinksFunction = () => {
       href: darkStylesUrl,
       media: "(prefers-color-scheme: dark)"
     },
+    { rel: "stylesheet", href: coreStylesUrl },
   ];
 };
 
@@ -75,8 +80,12 @@ function Document({
 
 function Layout({ children }: React.PropsWithChildren<{}>) {
   return (
-    <div>
-      {children}
+    <div id="root">
+      <Navbar />
+      <main>
+        {children}
+      </main>
+      <Footer>Hi, Footer</Footer>
     </div>
   );
 }

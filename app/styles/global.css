@@ -1,3 +1,4 @@
+@import './components/navbar.css';
 /*
   CSS Reset from https://www.joshwcomeau.com/css/custom-css-reset/
 */
@@ -52,6 +53,14 @@ h6 {
 }
 
 /*
+  Colors
+*/
+:root {
+  --site-main-background: #fffaf0;
+  --site-interactive: #000085;
+}
+
+/*
   Main App Layout
 */
 #root {
@@ -59,14 +68,25 @@ h6 {
   grid-template-columns: [viewport] 1fr [viewport];
   grid-template-rows: 75px 1fr 75px;
   height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  background: var(--site-main-background);
 }
 
-#root > nav {
-  background: rebeccapurple;
-}
 #root > main {
-  background: olive;
+  border: 1px solid olive;
 }
 #root > footer {
-  background: tomato;
+  border: 1px solid tomato;
+}
+
+/*
+  Global Components
+*/
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+.navbar__right {
+  margin-left: auto;
 }
