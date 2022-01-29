@@ -1,5 +1,5 @@
-/* :root {
-  --site-main-background: black;
-  --site-main-text: white;
-  --site-interactive: white;
-} */
+:root {
+  --site-main-background: #313131;
+  --site-main-text: #fff;
+  --site-interactive: #fff;
+}

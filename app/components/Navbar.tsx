@@ -1,14 +1,8 @@
-import { Link } from '~/core';
-
 export default function Navbar() {
+  const prefersDarkMode = true;
   return (
     <nav className="navbar">
-      <div className="navbar__left">
-        <Link to="/">Home</Link>
-      </div>
-      <div className="navbar__right">
-        <Link to="blog">Blog</Link>
-      </div>
+      <img src={prefersDarkMode ? '/images/site-logo-light.svg' : '/images/site-logo.svg'} alt="" className="navbar__logo" />
     </nav>
   );
 }
