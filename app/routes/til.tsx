@@ -4,9 +4,9 @@ import type { LinksFunction, LoaderFunction, MetaFunction } from "remix";
 import { Link } from '~/core';
 import Outline from '~/components/Outline';
 
-import blogCssUrl from '~/styles/routes/blog.css';
+import tilCssUrl from '~/styles/routes/til.css';
 
-type Post = {
+type TIL = {
   id: number;
   title: string;
   created_at: string;
@@ -16,14 +16,14 @@ type Post = {
 
 export let links: LinksFunction = () => {
   return [
-    { rel: "stylesheet", href: blogCssUrl },
+    { rel: "stylesheet", href: tilCssUrl },
   ];
 };
 
 export let meta: MetaFunction = () => {
   return {
-    title: "blog | mcgostisha",
-    description: "Marty Gostisha's blog"
+    title: "til | mcgostisha",
+    description: "Short snippets of content I've learned recently"
   };
 };
 
@@ -31,66 +31,61 @@ export let loader: LoaderFunction = async () => {
   return [
     {
       id: 3,
-      title: 'Two Years an Engineering Manager: What I Wish I Knew From the Start',
+      title: 'Remix loader functions',
       created_at: '2022-01-29T06:00:00.000Z',
       updated_at: '2022-01-29T06:00:00.000Z',
-      tags: [
-        'Engineering', 'Management'
-      ]
+      content: 'This is this content of the TIL'
     },
     {
       id: 2,
-      title: 'Rust & The Journey of Learning to Love Compilers',
+      title: 'Turning off reply notifications for large meetings',
       created_at: '2022-01-28T06:00:00.000Z',
       updated_at: '2022-01-29T06:00:00.000Z',
-      tags: [
-        'Rust', 'Engineering'
-      ]
+      content: 'This is this content of the TIL'
     },
     {
       id: 1,
-      title: 'The First Blog Post',
+      title: 'CSS backdrop-filter',
       created_at: '2022-01-27T06:00:00.000Z',
       updated_at: '2022-01-27T06:00:00.000Z',
-      tags: [
-        'Javascript', 'Rust', 'Engineering'
-      ]
+      content: 'This is this content of the TIL'
     },
   ]
 }
 
-type BlogItemProps = {
-  post: Post;
+type TILItemProps = {
+  til: TIL;
 }
 
-function BlogItem({ post }: BlogItemProps) {
+function TILItem({ til }: TILItemProps) {
   function formatDate(date: Date) {
     return new Intl.DateTimeFormat('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).format(date);
   }
 
-  const createdAt = formatDate(new Date(post.created_at));
-  const updatedAt = formatDate(new Date(post.updated_at));
+  const createdAt = formatDate(new Date(til.created_at));
+  const updatedAt = formatDate(new Date(til.updated_at));
 
   return (
-    <div className="blogItem">
-      <Link to={`${post.id}`}>{post.title}</Link>
+    <div className="tilItem">
+      <Link to={`${til.id}`}>{til.title}</Link>
       <p>{createdAt === updatedAt ? createdAt : `Written on ${createdAt}`}</p>
       {updatedAt === createdAt ? null : <p>{`Last updated ${updatedAt}`}</p>}
     </div>
   );
 }
 
-export default function BlogIndexRoute() {
-  const data = useLoaderData<Post[]>();
+type Props = {};
 
+export default function TILIndexRoute(props: Props) {
+  const data = useLoaderData<TIL[]>();
   return (
-    <div className="blog">
-      <h1><Outline>Blog</Outline></h1>
-      <div className="blog__list">
+    <div className="til">
+      <h1><Outline>T</Outline>oday <Outline>I</Outline> <Outline>L</Outline>earned</h1>
+      <div className="til__list">
         {
           data.length ?
-            data.map(post => {
-              return (<BlogItem key={post.id} post={post} />)
+            data.map(til => {
+              return (<TILItem key={til.id} til={til} />)
             }) : <p>coming soon</p>
         }
       </div>

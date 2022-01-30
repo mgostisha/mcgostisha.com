@@ -55,7 +55,7 @@ h6 {
 /*
   Fonts
 */
-@font-face {
+/* @font-face {
   font-family: 'Cormorant';
   src: url('/fonts/CormorantGaramond-Regular.ttf') format('truetype');
   font-weight: 400;
@@ -74,7 +74,7 @@ h6 {
   src: url('/fonts/CormorantGaramond-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
-}
+} */
 
 @font-face {
   font-family: 'Oxygen';
@@ -104,9 +104,9 @@ h6 {
   --site-main-background: #fff;
   --site-main-text: #313131;
   --site-interactive: navy;
-  --font-family-serif: Cormorant, serif;
+  /* --font-family-serif: Cormorant, serif;
   --font-family-serif-light: CormorantLight, serif;
-  --font-family-serif-bold: CormorantBold, serif;
+  --font-family-serif-bold: CormorantBold, serif; */
   --font-family-sans: Oxygen, sans-serif;
   --font-family-sans-light: OxygenLight, sans-serif;
   --font-family-sans-bold: OxygenBold, sans-serif;
@@ -121,10 +121,13 @@ h6 {
 }
 
 p,
-a,
 strong,
 em {
   font-family: var(--font-family-sans-light);
+}
+
+a {
+  font-family: var(--font-family-sans-bold);
 }
 
 h1,
@@ -133,7 +136,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-sans);
+  font-family: var(--font-family-sans-bold);
   font-weight: bold;
   line-height: 1.2;
 }
