@@ -28,29 +28,7 @@ export let meta: MetaFunction = () => {
 };
 
 export let loader: LoaderFunction = async () => {
-  return [
-    {
-      id: 3,
-      title: 'Remix loader functions',
-      created_at: '2022-01-29T06:00:00.000Z',
-      updated_at: '2022-01-29T06:00:00.000Z',
-      content: 'This is this content of the TIL'
-    },
-    {
-      id: 2,
-      title: 'Turning off reply notifications for large meetings',
-      created_at: '2022-01-28T06:00:00.000Z',
-      updated_at: '2022-01-29T06:00:00.000Z',
-      content: 'This is this content of the TIL'
-    },
-    {
-      id: 1,
-      title: 'CSS backdrop-filter',
-      created_at: '2022-01-27T06:00:00.000Z',
-      updated_at: '2022-01-27T06:00:00.000Z',
-      content: 'This is this content of the TIL'
-    },
-  ]
+  return [];
 }
 
 type TILItemProps = {

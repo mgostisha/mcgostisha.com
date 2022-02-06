@@ -28,35 +28,7 @@ export let meta: MetaFunction = () => {
 };
 
 export let loader: LoaderFunction = async () => {
-  return [
-    {
-      id: 3,
-      title: 'Two Years an Engineering Manager: What I Wish I Knew From the Start',
-      created_at: '2022-01-29T06:00:00.000Z',
-      updated_at: '2022-01-29T06:00:00.000Z',
-      tags: [
-        'Engineering', 'Management'
-      ]
-    },
-    {
-      id: 2,
-      title: 'Rust & The Journey of Learning to Love Compilers',
-      created_at: '2022-01-28T06:00:00.000Z',
-      updated_at: '2022-01-29T06:00:00.000Z',
-      tags: [
-        'Rust', 'Engineering'
-      ]
-    },
-    {
-      id: 1,
-      title: 'The First Blog Post',
-      created_at: '2022-01-27T06:00:00.000Z',
-      updated_at: '2022-01-27T06:00:00.000Z',
-      tags: [
-        'Javascript', 'Rust', 'Engineering'
-      ]
-    },
-  ]
+  return [];
 }
 
 type BlogItemProps = {
