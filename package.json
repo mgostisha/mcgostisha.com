@@ -36,5 +36,6 @@
   "engines": {
     "node": ">=14"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "main": "dist/worker.js"
 }
