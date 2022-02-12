@@ -1,0 +1,20 @@
+/*
+  Main blog page styles
+*/
+.blog {
+  max-width: 1000px;
+  margin: 3rem auto 0 auto;
+  padding: 0 1rem;
+}
+
+.blog__list {
+  margin-top: 1rem;
+}
+
+/*
+  Blog list item
+*/
+
+.blogItem {
+  margin-top: 0.5rem;
+}

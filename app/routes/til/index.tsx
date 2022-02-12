@@ -1,18 +1,13 @@
 import { useLoaderData } from "remix";
 import type { LinksFunction, LoaderFunction, MetaFunction } from "remix";
 
+import { getTILs } from "~/til";
+import type { TILItem } from "~/til";
+
 import { Link } from '~/core';
 import Outline from '~/components/Outline';
 
 import tilCssUrl from '~/styles/routes/til.css';
-
-type TIL = {
-  id: number;
-  title: string;
-  created_at: string;
-  updated_at: string;
-  tags: string[];
-}
 
 export let links: LinksFunction = () => {
   return [
@@ -32,14 +27,14 @@ export let meta: MetaFunction = () => {
 };
 
 export let loader: LoaderFunction = async () => {
-  return [];
+  return getTILs();
 }
 
 type TILItemProps = {
-  til: TIL;
+  til: TILItem;
 }
 
-function TILItem({ til }: TILItemProps) {
+function TIL({ til }: TILItemProps) {
   function formatDate(date: Date) {
     return new Intl.DateTimeFormat('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).format(date);
   }
@@ -49,7 +44,7 @@ function TILItem({ til }: TILItemProps) {
 
   return (
     <div className="tilItem">
-      <Link to={`${til.id}`}>{til.title}</Link>
+      <Link to={`${til.slug}`}>{til.title}</Link>
       <p>{createdAt === updatedAt ? createdAt : `Written on ${createdAt}`}</p>
       {updatedAt === createdAt ? null : <p>{`Last updated ${updatedAt}`}</p>}
     </div>
@@ -59,7 +54,7 @@ function TILItem({ til }: TILItemProps) {
 type Props = {};
 
 export default function TILIndexRoute(props: Props) {
-  const data = useLoaderData<TIL[]>();
+  const data = useLoaderData<TILItem[]>();
   return (
     <div className="til">
       <h1><Outline>T</Outline>oday <Outline>I</Outline> <Outline>L</Outline>earned</h1>
@@ -67,7 +62,7 @@ export default function TILIndexRoute(props: Props) {
         {
           data.length ?
             data.map(til => {
-              return (<TILItem key={til.id} til={til} />)
+              return (<TIL key={til.slug} til={til} />)
             }) : <p>coming soon</p>
         }
       </div>

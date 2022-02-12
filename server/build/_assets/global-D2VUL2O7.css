@@ -1,0 +1,189 @@
+/*
+  CSS Reset from https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root {
+  isolation: isolate;
+}
+
+/*
+  Fonts
+*/
+/* @font-face {
+  font-family: 'Cormorant';
+  src: url('/fonts/CormorantGaramond-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CormorantBold';
+  src: url('/fonts/CormorantGaramond-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CormorantLight';
+  src: url('/fonts/CormorantGaramond-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+} */
+
+@font-face {
+  font-family: 'Oxygen';
+  src: url('/fonts/Oxygen-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OxygenBold';
+  src: url('/fonts/Oxygen-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OxygenLight';
+  src: url('/fonts/Oxygen-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/*
+  Site Variables
+*/
+:root {
+  --site-main-background: #eee;
+  --site-main-text: #313131;
+  --site-interactive: navy;
+  /* --font-family-serif: Cormorant, serif;
+  --font-family-serif-light: CormorantLight, serif;
+  --font-family-serif-bold: CormorantBold, serif; */
+  --font-family-sans: Oxygen, sans-serif;
+  --font-family-sans-light: OxygenLight, sans-serif;
+  --font-family-sans-bold: OxygenBold, sans-serif;
+  --navbar-height: 75px;
+}
+
+/*
+  Typography
+*/
+* {
+  color: var(--site-main-text);
+}
+
+p,
+strong,
+em {
+  font-family: var(--font-family-sans-light);
+}
+
+a {
+  font-family: var(--font-family-sans-bold);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-sans-bold);
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 44px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: 28px;
+}
+
+/*
+  Main App Layout
+*/
+#root {
+  height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  background: var(--site-main-background);
+}
+
+#root > main {
+  padding-top: var(--navbar-height);
+}
+
+/*
+  Global Components
+*/
+.navbar {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  height: var(--navbar-height);
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar__logo {
+  height: 60px;
+  width: 60px;
+}

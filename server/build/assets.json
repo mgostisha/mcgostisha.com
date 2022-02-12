@@ -1,0 +1,85 @@
+{
+  "version": "e2b77e4e",
+  "entry": {
+    "module": "/build/entry.client-RMW4SKK7.js",
+    "imports": [
+      "/build/_shared/chunk-FTNZGGRW.js",
+      "/build/_shared/chunk-E7VMOUYL.js"
+    ]
+  },
+  "routes": {
+    "root": {
+      "id": "root",
+      "path": "",
+      "module": "/build/root-7OQYMRMO.js",
+      "imports": [
+        "/build/_shared/chunk-3MI5HK5K.js"
+      ],
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": true,
+      "hasErrorBoundary": true
+    },
+    "routes/blog": {
+      "id": "routes/blog",
+      "parentId": "root",
+      "path": "blog",
+      "module": "/build/routes/blog-NMMWXVTD.js",
+      "imports": [
+        "/build/_shared/chunk-6B6FFW6D.js"
+      ],
+      "hasAction": false,
+      "hasLoader": true,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/blog.$slug": {
+      "id": "routes/blog.$slug",
+      "parentId": "root",
+      "path": "blog/:slug",
+      "module": "/build/routes/blog.$slug-CN5BASEP.js",
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/index": {
+      "id": "routes/index",
+      "parentId": "root",
+      "index": true,
+      "module": "/build/routes/index-3J76BMLJ.js",
+      "imports": [
+        "/build/_shared/chunk-6B6FFW6D.js"
+      ],
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/til/$slug": {
+      "id": "routes/til/$slug",
+      "parentId": "root",
+      "path": "til/:slug",
+      "module": "/build/routes/til/$slug-NEVO2BGW.js",
+      "hasAction": false,
+      "hasLoader": true,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/til/index": {
+      "id": "routes/til/index",
+      "parentId": "root",
+      "path": "til",
+      "index": true,
+      "module": "/build/routes/til/index-73ZKFELW.js",
+      "imports": [
+        "/build/_shared/chunk-6B6FFW6D.js"
+      ],
+      "hasAction": false,
+      "hasLoader": true,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    }
+  },
+  "url": "/build/manifest-E2B77E4E.js"
+}

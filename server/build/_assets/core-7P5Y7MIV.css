@@ -1,0 +1,15 @@
+/*
+  Links
+*/
+.link {
+  color: var(--site-interactive);
+}
+
+/*
+  Outline
+*/
+.outline {
+  border: 1px solid var(--site-main-text);
+  padding: 0 0.1em;
+  line-height: 1.4;
+}
