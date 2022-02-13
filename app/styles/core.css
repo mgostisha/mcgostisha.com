@@ -1,8 +1,40 @@
 /*
+  ContentMetadata
+*/
+.contentMetadata {
+  font-size: var(--font-size-small);
+  font-family: var(--font-family-sans-light);
+}
+
+.contentMetadata p:nth-child(2) {
+  margin-top: 0.25rem;
+}
+
+/*
   Links
 */
 .link {
   color: var(--site-interactive);
+}
+
+/*
+  Navbar
+*/
+.navbar {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  height: var(--navbar-height);
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar__logo {
+  height: 60px;
+  width: 60px;
 }
 
 /*

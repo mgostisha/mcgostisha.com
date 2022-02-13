@@ -10,7 +10,7 @@ import {
 } from "remix";
 import type { LinksFunction } from "remix";
 
-import Navbar from '~/components/Navbar';
+import { Navbar } from '~/core';
 
 import globalStylesUrl from "~/styles/global.css";
 import darkStylesUrl from "~/styles/dark.css";

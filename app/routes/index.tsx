@@ -1,6 +1,5 @@
 import type { LinksFunction, MetaFunction } from "remix";
-import { Link } from '~/core';
-import Outline from '~/components/Outline';
+import { Link, Outline } from '~/core';
 
 import indexCssUrl from '~/styles/routes/index.css';
 
@@ -19,7 +18,7 @@ export let meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="index">
+    <div className="index grid">
       <h1>I'm <Outline>Marty</Outline>, an engineer(ing manager).</h1>
       <p>I lead the <Outline>web product team</Outline> for <Link external to="https://info.flipgrid.com">Flipgrid</Link> at <Link external to="https://careers.microsoft.com/us/en/search-results?keywords=Flipgrid">Microsoft</Link>.</p>
       <p>I'm <Outline>writing</Outline> on my <Link to="blog">blog</Link>.</p>

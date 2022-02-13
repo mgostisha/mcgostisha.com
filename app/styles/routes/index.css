@@ -1,7 +1,5 @@
-.index {
-  max-width: 1000px;
-  margin: 3rem auto 0 auto;
-  padding: 0 1rem;
+.index > * {
+  grid-column: container;
 }
 
 .index p {

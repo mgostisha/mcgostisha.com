@@ -1,8 +1,8 @@
 import { useLoaderData } from "remix";
 import type { LinksFunction, LoaderFunction, MetaFunction } from "remix";
 
-import { Link } from '~/core';
-import Outline from '~/components/Outline';
+import { Link, Outline } from '~/core';
+import { formatDate } from '~/utils/dates';
 
 import blogCssUrl from '~/styles/routes/blog.css';
 
@@ -40,12 +40,8 @@ type BlogItemProps = {
 }
 
 function BlogItem({ post }: BlogItemProps) {
-  function formatDate(date: Date) {
-    return new Intl.DateTimeFormat('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).format(date);
-  }
-
-  const createdAt = formatDate(new Date(post.created_at));
-  const updatedAt = formatDate(new Date(post.updated_at));
+  const createdAt = formatDate(post.created_at);
+  const updatedAt = formatDate(post.updated_at);
 
   return (
     <div className="blogItem">
@@ -60,9 +56,9 @@ export default function BlogIndexRoute() {
   const data = useLoaderData<Post[]>();
 
   return (
-    <div className="blog">
-      <h1><Outline>Blog</Outline></h1>
-      <div className="blog__list">
+    <div className="blog grid">
+      <h1 className="grid-column-container"><Outline>Blog</Outline></h1>
+      <div className="blog__list grid-column-container">
         {
           data.length ?
             data.map(post => {

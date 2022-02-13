@@ -1,5 +1,5 @@
 {
-  "version": "e2b77e4e",
+  "version": "d9b4897f",
   "entry": {
     "module": "/build/entry.client-RMW4SKK7.js",
     "imports": [
@@ -11,35 +11,33 @@
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-7OQYMRMO.js",
+      "module": "/build/root-MKXPM4MT.js",
       "imports": [
-        "/build/_shared/chunk-3MI5HK5K.js"
+        "/build/_shared/chunk-OJ7FIIYV.js"
       ],
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": true,
       "hasErrorBoundary": true
     },
-    "routes/blog": {
-      "id": "routes/blog",
+    "routes/blog/$slug": {
+      "id": "routes/blog/$slug",
       "parentId": "root",
-      "path": "blog",
-      "module": "/build/routes/blog-NMMWXVTD.js",
-      "imports": [
-        "/build/_shared/chunk-6B6FFW6D.js"
-      ],
+      "path": "blog/:slug",
+      "module": "/build/routes/blog/$slug-7XGPLNWM.js",
       "hasAction": false,
-      "hasLoader": true,
+      "hasLoader": false,
       "hasCatchBoundary": false,
       "hasErrorBoundary": false
     },
-    "routes/blog.$slug": {
-      "id": "routes/blog.$slug",
+    "routes/blog/index": {
+      "id": "routes/blog/index",
       "parentId": "root",
-      "path": "blog/:slug",
-      "module": "/build/routes/blog.$slug-CN5BASEP.js",
+      "path": "blog",
+      "index": true,
+      "module": "/build/routes/blog/index-6D6MNC54.js",
       "hasAction": false,
-      "hasLoader": false,
+      "hasLoader": true,
       "hasCatchBoundary": false,
       "hasErrorBoundary": false
     },
@@ -47,10 +45,7 @@
       "id": "routes/index",
       "parentId": "root",
       "index": true,
-      "module": "/build/routes/index-3J76BMLJ.js",
-      "imports": [
-        "/build/_shared/chunk-6B6FFW6D.js"
-      ],
+      "module": "/build/routes/index-U2LOIUCC.js",
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": false,
@@ -60,7 +55,10 @@
       "id": "routes/til/$slug",
       "parentId": "root",
       "path": "til/:slug",
-      "module": "/build/routes/til/$slug-NEVO2BGW.js",
+      "module": "/build/routes/til/$slug-FYXU7YGK.js",
+      "imports": [
+        "/build/_shared/chunk-VDS5GBQM.js"
+      ],
       "hasAction": false,
       "hasLoader": true,
       "hasCatchBoundary": false,
@@ -71,9 +69,9 @@
       "parentId": "root",
       "path": "til",
       "index": true,
-      "module": "/build/routes/til/index-73ZKFELW.js",
+      "module": "/build/routes/til/index-V2EUW6FG.js",
       "imports": [
-        "/build/_shared/chunk-6B6FFW6D.js"
+        "/build/_shared/chunk-VDS5GBQM.js"
       ],
       "hasAction": false,
       "hasLoader": true,
@@ -81,5 +79,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-E2B77E4E.js"
+  "url": "/build/manifest-D9B4897F.js"
 }

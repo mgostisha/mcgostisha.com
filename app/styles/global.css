@@ -1,4 +1,32 @@
 /*
+  Site Variables
+*/
+:root {
+  /* Colors*/
+  --site-main-background: #eee;
+  --site-main-text: #313131;
+  --site-interactive: navy;
+  /* Font Family*/
+  --font-family-sans: Oxygen, sans-serif;
+  --font-family-sans-light: OxygenLight, sans-serif;
+  --font-family-sans-bold: OxygenBold, sans-serif;
+  /* Font Sizes */
+  --font-size-h1: 42px;
+  --font-size-h2: 36px;
+  --font-size-h3: 28px;
+  --font-size-h4: 28px;
+  --font-size-h5: 28px;
+  --font-size-h6: 28px;
+  --font-size-main: 16px;
+  --font-size-small: 14px;
+  --font-size-large: 18px;
+  /* Layout & Dimensions*/
+  --site-top-spacer: 2rem;
+  --navbar-height: 75px;
+  --prose-width: 80ch;
+}
+
+/*
   CSS Reset from https://www.joshwcomeau.com/css/custom-css-reset/
 */
 *,
@@ -14,7 +42,7 @@
 html,
 body {
   height: 100%;
-  font-size: 16px;
+  font-size: var(--font-size-main);
 }
 
 body {
@@ -55,27 +83,6 @@ h6 {
 /*
   Fonts
 */
-/* @font-face {
-  font-family: 'Cormorant';
-  src: url('/fonts/CormorantGaramond-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'CormorantBold';
-  src: url('/fonts/CormorantGaramond-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'CormorantLight';
-  src: url('/fonts/CormorantGaramond-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-} */
-
 @font-face {
   font-family: 'Oxygen';
   src: url('/fonts/Oxygen-Regular.ttf') format('truetype');
@@ -98,32 +105,11 @@ h6 {
 }
 
 /*
-  Site Variables
-*/
-:root {
-  --site-main-background: #eee;
-  --site-main-text: #313131;
-  --site-interactive: navy;
-  /* --font-family-serif: Cormorant, serif;
-  --font-family-serif-light: CormorantLight, serif;
-  --font-family-serif-bold: CormorantBold, serif; */
-  --font-family-sans: Oxygen, sans-serif;
-  --font-family-sans-light: OxygenLight, sans-serif;
-  --font-family-sans-bold: OxygenBold, sans-serif;
-  --navbar-height: 75px;
-}
-
-/*
   Typography
 */
 * {
   color: var(--site-main-text);
-}
-
-p,
-strong,
-em {
-  font-family: var(--font-family-sans-light);
+  font-family: var(--font-family-sans);
 }
 
 a {
@@ -142,18 +128,18 @@ h6 {
 }
 
 h1 {
-  font-size: 44px;
+  font-size: var(--font-size-h1);
 }
 
 h2 {
-  font-size: 36px;
+  font-size: var(--font-size-h2);
 }
 
 h3,
 h4,
 h5,
 h6 {
-  font-size: 28px;
+  font-size: var(--font-size-h3);
 }
 
 /*
@@ -168,22 +154,22 @@ h6 {
   padding-top: var(--navbar-height);
 }
 
-/*
-  Global Components
-*/
-.navbar {
-  position: fixed;
-  display: flex;
-  align-items: center;
-  height: var(--navbar-height);
-  width: 100%;
-  padding: 12px;
-  background: transparent;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+.grid {
+  display: grid;
+  grid-template-columns:
+    [viewport-start] minmax(1rem, 1fr) [container-start] minmax(0, 1fr) [prose-start] minmax(0, var(--prose-width))
+    [prose-end] minmax(0, 1fr) [container-end] minmax(1rem, 1fr) [viewport-end];
+  margin-top: var(--site-top-spacer);
 }
 
-.navbar__logo {
-  height: 60px;
-  width: 60px;
+.grid-column-viewport {
+  grid-column: viewport;
+}
+
+.grid-column-container {
+  grid-column: container;
+}
+
+.grid-column-prose {
+  grid-column: prose;
 }
