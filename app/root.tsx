@@ -63,7 +63,7 @@ function Document({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <link rel="icon" href="/favicon.ico"></link>
+        <link rel="icon" href="https://mcgostisha.com/images/favicon.png"></link>
         {title ? <title>{title}</title> : null}
         <meta property="og:title" content="Marty Gostisha" />
         <meta property="og:description" content="About me, Blog, TIL and more" />

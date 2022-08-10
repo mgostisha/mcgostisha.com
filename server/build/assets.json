@@ -1,5 +1,5 @@
 {
-  "version": "6dc0c88a",
+  "version": "1698b206",
   "entry": {
     "module": "/build/entry.client-RMW4SKK7.js",
     "imports": [
@@ -11,7 +11,7 @@
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-3LWHIKVK.js",
+      "module": "/build/root-YMNI2S4U.js",
       "imports": [
         "/build/_shared/chunk-OJ7FIIYV.js"
       ],
@@ -79,5 +79,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-6DC0C88A.js"
+  "url": "/build/manifest-1698B206.js"
 }
