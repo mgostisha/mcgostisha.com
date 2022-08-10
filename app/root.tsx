@@ -65,14 +65,6 @@ function Document({
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="icon" href="https://mcgostisha.com/images/favicon.png"></link>
         {title ? <title>{title}</title> : null}
-        <meta property="og:title" content="Marty Gostisha" />
-        <meta property="og:description" content="About me, Blog, TIL and more" />
-        <meta property="og:image" content="https://mcgostisha.com/images/og-image-default.png" />
-        <meta property="og:url" content="https://mcgostisha.com" />
-        <meta property="og:type" content="website" />
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@mg0stisha" />
-        <meta name="twitter:creator" content="@mg0stisha" />
         <Meta />
         <Links />
       </head>
