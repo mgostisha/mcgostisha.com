@@ -67,7 +67,7 @@ function Document({
         {title ? <title>{title}</title> : null}
         <meta property="og:title" content="Marty Gostisha" />
         <meta property="og:description" content="About me, Blog, TIL and more" />
-        <meta property="og:image" content="https://mcgostisha-com.pages.dev/images/og-image-default.png" />
+        <meta property="og:image" content="https://mcgostisha.com/images/og-image-default.png" />
         <meta property="og:url" content="https://mcgostisha.com" />
         <meta property="og:type" content="website" />
         <meta property="twitter:card" content="summary_large_image" />

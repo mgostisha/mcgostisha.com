@@ -20,8 +20,8 @@ export let meta: MetaFunction = () => {
     description: "Short snippets of content I've learned recently",
     'og:title': "TIL (Today I Learned)",
     'og:description': "Quick snippets of things I've learned recently.",
-    'og:image': "https://mcgostisha-com.pages.dev/images/og-image-til.png",
-    'og:url': "https://mcgostisha-com.pages.dev/til",
+    'og:image': "https://mcgostisha.com/images/og-image-til.png",
+    'og:url': "https://mcgostisha.com/til",
   };
 };
 

@@ -26,8 +26,8 @@ export let meta: MetaFunction = () => {
     description: "Blogging about web development, engineering management, the NBA, and much more.",
     'og:title': "Blog",
     'og:description': "Blogging about web development, engineering management, the NBA, and much more.",
-    'og:image': "https://mcgostisha-com.pages.dev/images/og-image-blog.png",
-    'og:url': "https://mcgostisha-com.pages.dev/blog",
+    'og:image': "https://mcgostisha.com/images/og-image-blog.png",
+    'og:url': "https://mcgostisha.com/blog",
   };
 };
 
