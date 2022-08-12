@@ -24,25 +24,30 @@ function isValidPostAttributes(
   return attributes?.title;
 }
 
-const tilPath = path.join(__dirname, "../../content/til");
+const tilPath = path.join(__dirname, "../../public/content/til");
+console.log(__dirname);
 
 export async function getTILs() {
-  const dir = await fs.readdir(tilPath);
-  const tils = await Promise.all(
-    dir.map(async filename => {
-      const file = await fs.readFile(path.join(tilPath, filename));
-      const { attributes } = parseFrontMatter(file.toString());
+  try {
+    const dir = await fs.readdir(tilPath);
+    const tils = await Promise.all(
+      dir.map(async filename => {
+        const file = await fs.readFile(path.join(tilPath, filename));
+        const { attributes } = parseFrontMatter(file.toString());
+  
+        invariant(isValidPostAttributes(attributes));
+        const data = {
+          slug: filename.replace(/\.md$/, ""),
+          ...attributes
+        };
+        return data;
+      })
+    );
 
-
-      invariant(isValidPostAttributes(attributes));
-      const data = {
-        slug: filename.replace(/\.md$/, ""),
-        ...attributes
-      };
-      return data;
-    })
-  );
-  return tils.sort((a, b) => (a.created_at > b.created_at ? -1 : 1));
+    return { tils: tils.sort((a, b) => (a.created_at > b.created_at ? -1 : 1)) };
+  } catch (ex) {
+    return { error: ex };
+  }
 }
 
 export async function getTIL(slug: string) {
