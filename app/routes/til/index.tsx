@@ -1,7 +1,7 @@
 import { useLoaderData } from "remix";
 import type { LinksFunction, LoaderFunction, MetaFunction } from "remix";
 
-// import { getTILs } from "~/til";
+import { getTILs } from "~/til";
 import type { TILItem } from "~/til";
 
 import { Link, Outline } from '~/core';
@@ -26,7 +26,7 @@ export let meta: MetaFunction = () => {
 };
 
 export let loader: LoaderFunction = async () => {
-  return [];
+  return getTILs();
 }
 
 type TILItemProps = {
