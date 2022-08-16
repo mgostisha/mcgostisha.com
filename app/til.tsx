@@ -24,7 +24,6 @@ function isValidPostAttributes(
   return attributes?.title;
 }
 
-`${__dirname}/../content/til`;
 const tilPath = path.join(__dirname, "..", "content", "til");
 
 export async function getTILs() {
