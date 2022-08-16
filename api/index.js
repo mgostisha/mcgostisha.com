@@ -369,7 +369,7 @@ __export(debug_exports, {
   loader: () => loader4
 });
 var import_promises2 = __toESM(require("fs/promises")), import_path2 = __toESM(require("path")), import_node2 = require("@remix-run/node"), loader4 = async () => {
-  let contents = (await import_promises2.default.readdir(import_path2.default.join(__dirname))).map((filename) => filename);
+  let contents = (await import_promises2.default.readdir(`${__dirname}`)).map((filename) => filename);
   return (0, import_node2.json)({
     cwd: process.cwd(),
     cwd_contents: contents,

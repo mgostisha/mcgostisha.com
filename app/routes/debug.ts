@@ -4,7 +4,7 @@ import { json } from "@remix-run/node";
 import type { LoaderFunction } from "@remix-run/node";
 
 export let loader: LoaderFunction = async () => {
-    const dir = await fs.readdir(path.join(__dirname));
+    const dir = await fs.readdir(`${__dirname}`);
     const contents = dir.map(filename => filename);
     return json({
         cwd: process.cwd(),
