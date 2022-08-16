@@ -1,4 +1,4 @@
-import { Link as RemixLink } from 'remix';
+import { Link as RemixLink } from '@remix-run/react';
 import type { ReactNode } from 'react';
 
 type Props = {

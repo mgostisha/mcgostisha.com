@@ -1,4 +1,4 @@
-import type { LinksFunction, MetaFunction } from "remix";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import { Link, Outline } from '~/core';
 
 import indexCssUrl from '~/styles/routes/index.css';

@@ -1,5 +1,5 @@
-import { useLoaderData } from "remix";
-import type { LinksFunction, LoaderFunction } from "remix";
+import { useLoaderData } from "@remix-run/react";
+import type { LinksFunction, LoaderFunction } from "@remix-run/node";
 
 import { Link } from "~/core";
 import ContentMetadata from "~/core/ContentMetadata";

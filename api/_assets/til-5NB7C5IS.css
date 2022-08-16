@@ -1,0 +1,25 @@
+/*
+  Main TIL page styles
+*/
+.til__list {
+  margin-top: 1rem;
+}
+
+/*
+  TIL list item
+*/
+.til__listItem {
+  margin-top: 0.5rem;
+}
+
+/*
+  TIL Slug Route
+*/
+.tilSlug__title {
+  margin-top: 1rem;
+}
+
+.tilSlug__content {
+  margin-top: 1.5rem;
+  font-family: var(--font-family-sans);
+}

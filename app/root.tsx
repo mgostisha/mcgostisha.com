@@ -7,8 +7,8 @@ import {
   Scripts,
   ScrollRestoration,
   useCatch,
-} from "remix";
-import type { LinksFunction } from "remix";
+} from "@remix-run/react";
+import type { LinksFunction } from "@remix-run/node";
 
 import { Navbar } from '~/core';
 

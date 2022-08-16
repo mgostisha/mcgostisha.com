@@ -1,5 +1,5 @@
-import { useLoaderData } from "remix";
-import type { LinksFunction, LoaderFunction, MetaFunction } from "remix";
+import { useLoaderData } from "@remix-run/react";
+import type { LinksFunction, LoaderFunction, MetaFunction } from "@remix-run/node";
 
 import { Link, Outline } from '~/core';
 import { formatDate } from '~/utils/dates';

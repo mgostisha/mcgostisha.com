@@ -1,5 +1,5 @@
-import { useLoaderData } from "remix";
-import type { LinksFunction, LoaderFunction, MetaFunction } from "remix";
+import { useLoaderData } from "@remix-run/react";
+import type { LinksFunction, LoaderFunction, MetaFunction } from "@remix-run/node";
 
 import { getTILs } from "~/til";
 import type { TILItem } from "~/til";
