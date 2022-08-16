@@ -273,7 +273,7 @@ function isValidPostAttributes(attributes) {
   return attributes == null ? void 0 : attributes.title;
 }
 `${__dirname}`;
-var tilPath = import_path.default.join(__dirname, "..", "public", "content", "til");
+var tilPath = import_path.default.join(__dirname, "public", "content", "til");
 async function getTILs() {
   try {
     let dir = await import_promises.default.readdir(tilPath);

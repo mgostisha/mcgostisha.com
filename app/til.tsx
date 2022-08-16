@@ -25,7 +25,7 @@ function isValidPostAttributes(
 }
 
 `${__dirname}/public/content/til`;
-const tilPath = path.join(__dirname, "..", "public", "content", "til");
+const tilPath = path.join(__dirname, "public", "content", "til");
 
 export async function getTILs() {
   try {
