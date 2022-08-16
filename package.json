@@ -5,7 +5,6 @@
   "license": "",
   "scripts": {
     "build": "remix build",
-    "deploy": "fly deploy --remote-only",
     "dev": "concurrently \"npm:watch\" \"npm:start:dev\"",
     "postinstall": "remix setup node",
     "start": "cross-env NODE_ENV=production node server/index.js",

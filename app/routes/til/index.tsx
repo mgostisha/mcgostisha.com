@@ -26,10 +26,9 @@ export let meta: MetaFunction = () => {
 };
 
 export let loader: LoaderFunction = async () => {
-  return [];
-  // const data = await getTILs();
-  // if (data.error) throw data.error;
-  // return data.tils;
+  const data = await getTILs();
+  if (data.error) throw data.error;
+  return data.tils;
 }
 
 type TILItemProps = {
