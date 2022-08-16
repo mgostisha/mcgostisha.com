@@ -64,7 +64,7 @@ export default function TILIndexRoute(props: Props) {
           data.length ?
             data.map(til => {
               return (<TILListItem key={til.slug} til={til} />)
-            }) : <p>coming soon</p>
+            }) : <p>coming soon!</p>
         }
       </div>
     </div>
