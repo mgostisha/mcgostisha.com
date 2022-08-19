@@ -369,12 +369,14 @@ __export(debug_exports, {
   loader: () => loader4
 });
 var import_promises2 = __toESM(require("fs/promises")), import_path2 = __toESM(require("path")), import_node2 = require("@remix-run/node"), loader4 = async () => {
-  let contents = (await import_promises2.default.readdir(`${__dirname}`)).map((filename) => filename);
+  let dir = await import_promises2.default.readdir(__dirname), dir_contents = dir.map((filename) => filename), up_dir = await import_promises2.default.readdir(import_path2.default.join(__dirname, "..")), up_dir_contents = dir.map((filename) => filename), up_up_dir = await import_promises2.default.readdir(import_path2.default.join(__dirname, "..", "..")), up_up_dir_contents = dir.map((filename) => filename);
   return (0, import_node2.json)({
-    cwd: process.cwd(),
-    cwd_contents: contents,
-    dirname: __dirname,
-    up_dir: import_path2.default.join(__dirname, "..", "..")
+    dir,
+    dir_contents,
+    up_dir,
+    up_dir_contents,
+    up_up_dir,
+    up_up_dir_contents
   });
 };
 
