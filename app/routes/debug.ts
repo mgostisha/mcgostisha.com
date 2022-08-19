@@ -9,6 +9,8 @@ export let loader: LoaderFunction = async () => {
     return json({
         cwd: process.cwd(),
         cwd_contents: contents,
-        up_dir: path.join(__dirname, ".."),
+        dirname: __dirname,
+        up_dir: path.join(__dirname, "..", ".."),
+
     })
 }

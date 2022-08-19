@@ -373,7 +373,8 @@ var import_promises2 = __toESM(require("fs/promises")), import_path2 = __toESM(r
   return (0, import_node2.json)({
     cwd: process.cwd(),
     cwd_contents: contents,
-    up_dir: import_path2.default.join(__dirname, "..")
+    dirname: __dirname,
+    up_dir: import_path2.default.join(__dirname, "..", "..")
   });
 };
 
