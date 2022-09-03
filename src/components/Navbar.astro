@@ -1,0 +1,30 @@
+---
+import Link from './Link.astro';
+
+// const isDarkMode = window && !!window.matchMedia('(prefers-color-scheme: dark)').matches;
+const isDarkMode = true;
+const logoUrl = isDarkMode ? '/images/site-logo-light.svg' : '/images/site-logo.svg';
+---
+<nav class="navbar">
+    <Link to="/" aria-label="Back to home page">
+        <img src={logoUrl} alt="" class="navbar__logo" />
+    </Link>
+</nav>
+<style>
+    .navbar {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        height: var(--navbar-height);
+        width: 100%;
+        padding: 12px;
+        background: transparent;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .navbar__logo {
+        height: 60px;
+        width: 60px;
+    }
+</style>

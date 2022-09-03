@@ -1,0 +1,17 @@
+---
+export interface Props {
+    classes?: string;
+    external?: boolean;
+    to: string;
+}
+
+const { classes, external, to } = Astro.props;
+---
+
+<a class={`link ${classes ?? ""}`} href={to} target={external ? "_blank" : ""}><slot /></a>
+
+<style>
+    .link {
+        color: var(--site-interactive);
+    }
+</style>

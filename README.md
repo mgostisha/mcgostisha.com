@@ -1,54 +1,49 @@
-# Welcome to Remix!
+# Welcome to [Astro](https://astro.build)
 
-- [Remix Docs](https://remix.run/docs)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
 
-## Development
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-From your terminal:
+![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
 
-```sh
-npm run dev
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-## Deployment
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-First, build your app for production:
+Any static assets, like images, can be placed in the `public/` directory.
 
-```sh
-npm run build
-```
+## 🧞 Commands
 
-Then run the app in production mode:
+All commands are run from the root of the project, from a terminal:
 
-```sh
-npm start
-```
+| Command                | Action                                             |
+| :--------------------- | :------------------------------------------------- |
+| `npm install`          | Installs dependencies                              |
+| `npm run dev`          | Starts local dev server at `localhost:3000`        |
+| `npm run build`        | Build your production site to `./dist/`            |
+| `npm run preview`      | Preview your build locally, before deploying       |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
+| `npm run astro --help` | Get help using the Astro CLI                       |
 
-Now you'll need to pick a host to deploy it to.
+## 👀 Want to learn more?
 
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new
-project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
