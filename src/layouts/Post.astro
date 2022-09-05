@@ -1,0 +1,34 @@
+---
+import Layout from './Layout.astro';
+import Outline from '../components/Outline.astro';
+import { formatDateForHeader } from '../helpers/dates';
+import '../styles/post.css'
+
+const {
+    createdAt,
+    description,
+    ogImage,
+    title,
+    updatedAt
+} = Astro.props.frontmatter;
+const writtenOn = formatDateForHeader(createdAt);
+const updatedOn = formatDateForHeader(updatedAt);
+---
+<Layout description={description} ogImage={ogImage} title={title}>
+    <div class="post grid">
+        <h1>{title}</h1>
+        <p class="post__timestamp">
+            <Outline>Written on</Outline>
+            <span class="post__date">{writtenOn}</span>
+        </p>
+        {updatedOn ? (
+            <p class="post__timestamp">
+                <Outline>Updated on</Outline>
+                <span class="post__date">{updatedOn}</span>
+            </p>
+        ) : undefined}
+        <div class="post__container">
+            <slot />
+        </div>
+    </div>
+</Layout>

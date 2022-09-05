@@ -1,0 +1,25 @@
+.post > * {
+    grid-column: prose;
+}
+
+.post__container > * + * {
+    margin-block-start: 1rem;
+}
+
+.post__timestamp {
+    font-size: var(--font-size-small);
+}
+
+.post__date {
+    margin-inline-start: 0.2rem;
+}
+
+.post__container {
+    margin-block-start: 1.5rem;
+}
+
+.astro-code {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-block: 1rem;
+}

@@ -1,6 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Outline from '../../components/Outline.astro';
+import Link from '../../components/Link.astro';
+import { formatDateForHeader } from '../../helpers/dates';
+
+let posts: any[] = [];
+try {
+    posts = await Astro.glob('./*.md');
+} catch (ex) {
+    console.log(ex)
+}
+const publishedPosts = posts.filter(post => (import.meta.env.MODE === 'development' || !post.frontmatter.draft));
 ---
 
 <Layout
@@ -8,8 +18,58 @@ import Outline from '../../components/Outline.astro';
     description="Random snippets of thing's I've learned recently."
     ogImage="/images/og-image-til.png"
 >
-    <div class="til grid">
-        <h1 class="grid-column-container"><Outline>T</Outline>oday <Outline>I</Outline> <Outline>L</Outline>earned</h1>
-        <p class="grid-column-container">coming soon!</p>
-    </div>
+<div class="til grid">
+    <h1 class="til__header"><Outline>T</Outline>oday <Outline>I</Outline> <Outline>L</Outline>earned</h1>
+    {!!publishedPosts.length && (
+        publishedPosts.map((post) => {
+            if (post.url) {
+                return (
+                    <div class="til__post">
+                        <Link class="til__postLink" to={post.url}>{post.frontmatter.title}</Link>
+                        <p class="til__postTimestamp">
+                            <Outline>Written on</Outline>
+                            <span class="til__postTimestampValue">
+                                {formatDateForHeader(post.frontmatter.createdAt)}
+                            </span>
+                        </p>
+                    </div>
+                )
+            }
+        })
+    )}
+
+    {!publishedPosts.length && (
+        <p class="til__placeholder">coming soon!</p>
+    )}
+</div>
 </Layout>
+<style>
+    .til__header {
+        grid-column: prose;
+        margin-block-end: 1.5rem;
+    }
+
+    .til__placeholder {
+        grid-column: prose;
+    }
+
+    .til__post {
+        grid-column: prose;   
+    }
+
+    .til__post:not(:last-of-type) {
+        margin-block-end: 1rem;  
+    }
+
+    .til__postLink {
+        font-size: var(--font-size-large);
+    }
+
+    .til__postTimestamp {
+        font-size: var(--font-size-small);
+    }
+
+    .til__postTimestampValue {
+        margin-inline-start: 0.2rem;
+    }
+</style>

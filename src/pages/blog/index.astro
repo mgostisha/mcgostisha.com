@@ -4,9 +4,11 @@ import Outline from '../../components/Outline.astro';
 import Link from '../../components/Link.astro';
 import { formatDateForHeader } from '../../helpers/dates';
 
-const posts = await Astro.glob('./*.md');
+let posts: any[] = [];
+try {
+    posts = await Astro.glob('./*.md');
+} catch (ex) {}
 const publishedPosts = posts.filter(post => (import.meta.env.MODE === 'development' || !post.frontmatter.draft));
-console.log(Astro, import.meta.env);
 ---
 
 <Layout
@@ -41,16 +43,16 @@ console.log(Astro, import.meta.env);
 </Layout>
 <style>
     .blog__header {
-        grid-column: container;
+        grid-column: prose;
         margin-block-end: 1.5rem;
     }
 
     .blog__placeholder {
-        grid-column: container;
+        grid-column: prose;
     }
 
     .blog__post {
-        grid-column: container;   
+        grid-column: prose;   
     }
 
     .blog__post:not(:last-of-type) {
