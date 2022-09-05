@@ -1,14 +1,14 @@
 ---
 export interface Props {
-    classes?: string;
     external?: boolean;
     to: string;
+    class?: string;
 }
 
-const { classes, external, to, ...rest } = Astro.props;
+const {external, to, ...rest } = Astro.props;
 ---
 
-<a class={`link ${classes ?? ""}`} href={to} target={external ? "_blank" : undefined} {...rest}><slot /></a>
+<a class:list={['link', rest.class]} href={to} target={external ? "_blank" : undefined} {...rest}><slot /></a>
 
 <style>
     .link {

@@ -6,7 +6,15 @@ export interface Props {
 	title: string;
 }
 
-const { title } = Astro.props;
+const {
+	description = "Marty Gostisha: About me, Blog, TIL and more",
+	ogImage = "/images/og-image-default.png",
+	title,
+	twitterCardStyle = "summary_large_image"
+} = Astro.props;
+
+const url = Astro.url.href;
+const pageTitle = `${title} | mcgostisha.com`;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -15,16 +23,17 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/images/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<meta content="Homepage for Marty Gostisha" name="description">
-		<meta content="Marty Gostisha" property="og:title">
-		<meta content="About me, Blog, TIL and more" property="og:description">
-		<meta content="/images/og-image-default.png" property="og:image">
-		<meta content="https://mcgostisha.com" property="og:url">
+		<title>{pageTitle}</title>
+		<meta content={description} name="description">
+		<meta content={pageTitle} property="og:title">
+		<meta content={description} property="og:description">
+		<meta content={ogImage} property="og:image">
+		<meta content={url} property="og:url">
 		<meta content="website" property="og:type">
-		<meta content="summary_large_image" name="twitter:card">
+		<meta content={twitterCardStyle} name="twitter:card">
 		<meta content="@mg0stisha" name="twitter:site">
 		<meta content="@mg0stisha" name="twitter:creator">
+		<script defer data-domain="mcgostisha.com" src="https://plausible.io/js/plausible.js"></script>
 	</head>
 	<body>
 		<div id="root">
