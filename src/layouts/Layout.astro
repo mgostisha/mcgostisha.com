@@ -1,9 +1,13 @@
 ---
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 export interface Props {
+	description?: string;
+	ogImage?: string;
 	title: string;
+	twitterCardStyle?: string;
 }
 
 const {
@@ -40,6 +44,7 @@ const pageTitle = `${title} | mcgostisha.com`;
 			<Navbar />
 			<main>
 				<slot />
+				<Footer />
 			</main>
 		</div>
 	</body>

@@ -23,7 +23,7 @@
     /* Layout & Dimensions*/
     --site-top-spacer: 2rem;
     --navbar-height: 75px;
-    --prose-width: 80ch;
+    --prose-width: 70ch;
 
     /* From Astro */
     --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);

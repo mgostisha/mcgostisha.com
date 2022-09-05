@@ -29,6 +29,11 @@ const updatedOn = formatDateForHeader(updatedAt);
     .blogpost > * {
 		grid-column: prose;
 	}
+
+    .blogpost__container > * + * {
+        margin-block-start: 1rem;
+    }
+
     .astro-code {
         padding: 1rem;
         border-radius: 4px;
@@ -47,4 +52,6 @@ const updatedOn = formatDateForHeader(updatedAt);
     .blogpost__container {
         margin-block-start: 1.5rem;
     }
+
+    
 </style>

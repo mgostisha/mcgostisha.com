@@ -9,7 +9,11 @@ const publishedPosts = posts.filter(post => (import.meta.env.MODE === 'developme
 console.log(Astro, import.meta.env);
 ---
 
-<Layout title="blog">
+<Layout
+    title="blog"
+    description="Marty's Blog"
+    ogImage="/images/og-image-blog.png"
+>
 	<div class="blog grid">
         <h1 class="blog__header"><Outline>Blog</Outline></h1>
         {!!publishedPosts.length && (
