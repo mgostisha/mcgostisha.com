@@ -26,7 +26,7 @@
     --prose-width: 70ch;
 
     /* From Astro */
-    --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+    --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.05rem);
     --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
     --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
 }
@@ -59,7 +59,7 @@ body {
 }
 
 body {
-    line-height: 1.5;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -126,6 +126,7 @@ h6 {
 * {
     color: var(--site-main-text);
     font-family: var(--font-family-sans);
+    font-size: var(--font-size-base);
 }
 
 a {

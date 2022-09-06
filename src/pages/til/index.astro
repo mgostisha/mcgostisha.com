@@ -6,11 +6,13 @@ import { formatDateForHeader } from '../../helpers/dates';
 
 let posts: any[] = [];
 try {
-    posts = await Astro.glob('./*.md');
+    posts = await Astro.glob('./*.md*');
 } catch (ex) {
     console.log(ex)
 }
-const publishedPosts = posts.filter(post => (import.meta.env.MODE === 'development' || !post.frontmatter.draft));
+const publishedPosts = posts
+    .filter(post => (import.meta.env.MODE === 'development' || !post.frontmatter.draft))
+    .sort((a, b) => a.frontmatter.createdAt < b.frontmatter.createdAt ? 1 : (b.frontmatter.createdAt < a.frontmatter.createdAt ? -1 : 0));;
 ---
 
 <Layout
