@@ -55,7 +55,7 @@
 html,
 body {
     height: 100%;
-    font-size: var(--font-size-main);
+    font-size: var(--font-size-base);
 }
 
 body {
@@ -126,7 +126,6 @@ h6 {
 * {
     color: var(--site-main-text);
     font-family: var(--font-family-sans);
-    font-size: var(--font-size-base);
 }
 
 a {
