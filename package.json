@@ -11,7 +11,7 @@
     "generate-timestamp": "node -e 'console.log(new Date().toISOString())'"
   },
   "dependencies": {
-    "astro": "^1.1.5"
+    "astro": "^2.0.2"
   },
   "devDependencies": {
     "@astrojs/mdx": "^0.11.1",
