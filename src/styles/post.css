@@ -16,6 +16,7 @@
 
 .post__container {
     margin-block-start: 1.5rem;
+    line-height: 1.9;
 }
 
 .astro-code {
