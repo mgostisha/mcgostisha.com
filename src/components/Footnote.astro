@@ -1,0 +1,29 @@
+---
+export interface Props {
+    index: number;
+}
+
+const { index, ...rest } = Astro.props;
+---
+
+<div class="footnote">
+    <sup>
+        <a
+            id={`footnote-${index}`}
+            class="link"
+            href={`#footnote-entrypoint-${index}`}
+            {...rest}
+        >
+            [{index}]
+        </a>
+    </sup>
+    <p><slot /></p>
+</div>
+
+<style>
+    .footnote {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 4px;
+    }
+</style>

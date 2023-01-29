@@ -1,0 +1,22 @@
+---
+export interface Props {
+    index: number;
+}
+
+const { index, ...rest } = Astro.props;
+---
+
+<sup class="footnote-entrypoint">
+    <a
+        id={`footnote-entrypoint-${index}`}
+        class:list={['link', 'footnote-entrypoint']}
+        href={`#footnote-${index}`}
+        {...rest}
+    >[{index}]</a>
+</sup>
+
+<style>
+    .footnote-entrypoint {
+        scroll-margin-top: 25vh;
+    }
+</style>
