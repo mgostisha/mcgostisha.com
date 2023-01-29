@@ -1,0 +1,127 @@
+---
+layout: '../../layouts/Post.astro'
+title: 'Starting Your Software Engineering Career at a Development Agency'
+createdAt: '2023-01-29T13:21:07.568Z'
+updatedAt: null
+description: 'Thoughts, upsides, and downsides on starting your career at a development agency.'
+ogImage: '/images/og-image-blog.png'
+---
+import FootnoteEntrypoint from '../../components/FootnoteEntrypoint.astro';
+import Footnote from '../../components/Footnote.astro';
+
+
+I recently moved into a new role (and back from engineering manager to individual contributor… more on that in another post)
+and have been reflecting on my career and the experiences I’ve had that led me to where I am today. Looking back, I think that
+one of the things that boosted by career and technical ability was starting at a development agency as opposed to starting on a dedicated product team. 
+
+<strong>Disclaimer:</strong> this is just my view based on my own experience. In fact, it’s an incredibly narrow view,
+as it’s the only path I charted. I’d love for someone to write the inverse version of this article
+about their experience starting their career on a product team!
+
+## The Benefits
+### Exposure to different problems & constraints
+I think the biggest benefit to working at a development agency is the multitude of problem spaces you get to work in.
+This breadth of problem spaces breeds different constraints, approaches, and demands creativity in spots where you’d
+otherwise coast along with the way things are currently done.
+
+One constraint you’ll approach is the client’s budget. Some projects will have a seemingly infinite budget
+(well, not really, but you know). The client is heavily invested in the outcome, has money to spend, and
+while given an estimate, isn’t too concerned about the final cost as long as they feel like they’re
+getting what they paid for at the end of the project. Other clients will have incredibly strict
+budgets and every extra billable minute will be a fight to get approved no matter how critical
+the work is to the project.
+
+Another constraint you’ll have to work with is the scope of the project. Are you setting up a full system
+with a custom backend, frontend, admin portal, etc.? Or is it just a slim mobile app that’s mainly a wrapper
+around existing web functionality? Maybe you’re given an existing codebase from a previous agency the client
+worked with and you’re tasked with adding functionality to the current experience. All of these will lend
+themselves to different approaches and different ways to solve the same problem.
+
+Once you know what kind of client you’re working with and the scope of the problem, you get to think about
+how much of the project can be re-used from past work, which tools you’re going to use, and how the final
+product will be delivered to the client. Given this matrix of different decisions you have to make, you’re
+constantly thinking of what the best approach will be and how you can creatively get to the solution that
+will make the client happy (and thus coming back for more work on the future, hopefully!).
+
+### You can’t rely on robust existing systems
+Wait…this is an upside? Well, it could go either way, but I think it is. Working at a big tech company or with a large engineering
+team on a product that’s been around for a while means there’s probably some existing systems that you’ll get
+to leverage. Need to add telemetry around something you built? Cool, someone’s already provided the majority of
+the telemetry system, you just need to add some more usages of the existing system and it’ll end up in your
+existing telemetry dashboard. Deployment pipelines are set up, best practices are established, and while
+things to change and upgrades are made, a lot of things will have been done and you’re going to be working
+with the project as it is today.
+
+Sounds great, right? Sometimes it is, especially when you need to get stuff done quick. However, this means
+you’re going to have a more narrow view of how things can be done. You’re witnessing one way of doing things,
+when in reality there are many ways to architect a system, build a product, deploy a product, etc. and you’re
+seeing the output of the constraints in which this product was confined to.
+
+### Ability to rethink your tools more frequently
+Which leads to another upside: you get to rethink your approach and the way you build products more frequently<FootnoteEntrypoint index={1} />.
+I worked at a shop that was using Angular 1 for its projects at the time. We were always running into issues,
+delays, etc. because the tool we were using wasn’t serving us as well as different tools could. Instead of
+having to migrate a large, existing product to a new framework to reap the benefits, we just made a goal of
+researching new frameworks for our next project. (It’s not important to the story, but we eventually settled
+on Vue even though it was in beta at the time, and were very happy with our decision. It’s a great framework!)
+
+Most large-scale migrations at product teams are just that: large in scale and thus large in cost. They require
+team buy-in, leadership buy-in, budget allocation, and the risk associated with a major change. These happen
+from time to time, but they’re typically rare and you better be damn sure that what you’re switching to is going
+to serve your team better than the existing tools (now and in the medium to long-term future) because having to
+explain to your engineering and leadership teams that your half-year migration ended up with a worse result isn’t
+going to be easy.
+
+On that last point, what if Vue hadn’t worked for us as well as we thought? Again, no migration required, we
+just wouldn’t have used it for further projects and went back to the drawing board. You’ll also find that
+sometimes the tool you typically use isn’t the right tool for this project. You end up not needing a framework
+or the project lends itself more to a no-SQL database than it does a relational database. This leads to the
+aggregation of both technical and critical problem solving skills which will benefit you if and when you
+decide to work on a product team.
+
+## The Downsides
+
+### Less iteration, you don’t have to deal with your consequences
+Again…this is a downside? I’d say it is, at least in terms of thinking with the future of the project in mind.
+One of the hardest things that I dealt with when moving from an agency to a product team was adopting a
+longer-term mindset. That small hack isn’t going to just be there for getting this project out, it’s now
+technical debt that you’re going to have to come up with a solution for in the future.
+
+Typically you’ll work on a project for a relatively short amount of time, say 3-12 months, and then hand it off
+for someone else to maintain or spend a limited amount of hours per month fixing things or iterating on the
+project per the contract. While there are some upsides to this that I mentioned above, you also don’t typically
+think past the initial feature set or the work that’s been scoped. When moving to a product team, not only _should_
+you think this way, but your team and manager will _expect_ you to think this way. It’s not impossible to learn,
+but it is a big shift in how you build things and how you make decisions.
+
+### Less feedback on your work
+This one probably varies more depending on where you go, but in my experience there wasn’t much feedback on
+your work. In the places I was at, there were at most two people on any project at any given time, and we rarely did
+any form of code review outside of ad hoc conversations about approach or architecture. This led me to making
+the same mistakes multiple times, thinking what I was doing was sound, only to learn down the road that I’d
+made easily correctable mistakes if only there had been some feedback from someone with more experience.
+
+I’ve also found that this comes up in things where you’re biased or don’t have visibility into. For me, this was
+accessibility. I didn’t really know much about web accessibility at the time, nor was it written into any of the
+contracts or scope for the projects I worked on. The only exception was tab-ordering, which was thought of more
+as a convenience for keyboard users and less as an accessibility requirement. So what’d I do? I’d go through the
+document and manually add <code>tab-index</code> values, incrementing each tab-focusable element’s <code>tab-index</code> by one if it
+should be the next focusable element. Adding a new button that should be the second focusable element on the page?
+I’d search for all other <code>tab-index</code> values on the page and increment them all by one. Yes, I still cringe about
+this today, even after almost a decade, and wish I’d learned that there was an easier, more accessible, and more
+maintainable way to do this.
+
+There are likely more upsides and downsides than mentioned above, and you could argue which side the ones I chose fall on.
+Like I said above, these are just my thoughts based on my own very narrow experience.
+Whatever you think of the above, I wouldn’t fault anyone for joining a big company, taking a role that paid
+better, or doing what’s best for your personal situation. Do what’s best for you! You’re going to learn an
+incredible amount in your first professional software engineering role wherever you choose.
+
+<hr />
+
+<Footnote index={1}>
+    If you want to. Not every new project needs a new approach, especially if you’re under time or budget
+    constraints. Happy with what you’re building on or need to stand something up quick? You’re in a good spot!
+</Footnote>
+
+

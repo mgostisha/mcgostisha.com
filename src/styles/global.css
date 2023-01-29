@@ -3,6 +3,7 @@
     --site-main-background: #eee;
     --site-main-text: #313131;
     --site-interactive: navy;
+    --code-background: #ddd;
 
     /* Font Family*/
     --font-family-sans: Oxygen, sans-serif;
@@ -36,6 +37,7 @@
         --site-main-background: #313131;
         --site-main-text: #fff;
         --site-interactive: #fff;
+        --code-background: #222;
     }
 }
 
@@ -188,4 +190,11 @@ body, #root {
 
 .grid-column-prose {
     grid-column: prose;
+}
+
+code {
+    background-color: var(--code-background);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: monospace;
 }
