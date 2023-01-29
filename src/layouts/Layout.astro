@@ -19,7 +19,7 @@ const {
 	twitterCardStyle = "summary_large_image"
 } = Astro.props;
 
-const url = Astro.url.href;
+const url = new URL(Astro.url.pathname, Astro.site);
 const pageTitle = `${title} | mcgostisha.com`;
 ---
 <!DOCTYPE html>
