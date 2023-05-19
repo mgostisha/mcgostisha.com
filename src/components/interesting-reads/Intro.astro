@@ -1,0 +1,8 @@
+---
+export interface Props {
+    customText: string;
+}
+
+const { customText } = Astro.props;
+---
+<em>These are interesting things that I've read recently. Mostly focused around software engineering, but everything is fair game. {customText}</em>
