@@ -3,7 +3,7 @@
 }
 
 .post__container > * + * {
-    margin-block-start: 1.5em;
+    margin-block-start: var(--site-common-spacer);
 }
 
 .post__timestamp {
@@ -15,7 +15,7 @@
 }
 
 .post__container {
-    margin-block-start: 1.5rem;
+    margin-block-start: var(--site-common-spacer);
     line-height: 1.9;
 }
 

@@ -1,9 +1,10 @@
 ---
 layout: ../../layouts/Post.astro
-title: 'Interesting Reads, #1'
+title: 'Interesting Reads, #2'
 description: "A sample of interesting articles, blog posts, and books I've read recently."
-createdAt: '2023-05-19T23:44:09.697Z'
+createdAt: '2023-08-11T23:44:09.697Z'
 updatedAt: null
+draft: true
 ---
 import InterestingReadsIntro from '../../components/interesting-reads/Intro.astro';
 import InterestingReadsCategoryHeader from '../../components/interesting-reads/CategoryHeader.astro';
@@ -12,7 +13,7 @@ import Blockquote from '../../components/Blockquote.astro';
 import Link from '../../components/Link.astro';
 
 <InterestingReadsIntro
-    customText="I'm working on web performance stuff now, as well as being on a basketball analytics kick, which is well reflected in these articles."
+    customText="This one's all engineering and books."
 />
 
 <InterestingReadsCategoryHeader>Software Engineering</InterestingReadsCategoryHeader>
@@ -21,7 +22,6 @@ import Link from '../../components/Link.astro';
     author="Slava Knyazev"
     title="A Practical Guide to Not Blocking The Event Loop"
     url="https://www.bbss.dev/posts/eventloop"
-    spacer
 >
     This article is just what the title says -- practical. I've found that working on improving performance at a large scale can be as frustrating
     as it is rewarding at times. Easy enough to see where the problems are, tough to diagnose the root cause of the problem, and even trickier to
@@ -32,7 +32,6 @@ import Link from '../../components/Link.astro';
     author="Amazon Prime Video Team"
     title="Scaling up the Prime Video audio/video monitoring service and reducing costs by 90%"
     url="https://www.primevideotech.com/video-streaming/scaling-up-the-prime-video-audio-video-monitoring-service-and-reducing-costs-by-90"
-    spacer
 >
     I saw the Prime Video team catching flack for this article on the Twitter after it came out. "LOL, Amazon says not to use Lambdas!" <Link to="https://twitter.com/dvassallo/status/1654881181173952513?s=20" external>"The only
     reason they used Lambda was because upper management forced them to!"</Link> However, I feel like this was the key quote in the article:
@@ -51,7 +50,6 @@ import Link from '../../components/Link.astro';
     author="Unidentified Google Researcher"
     title="Google: 'We Have No Moat, and Neither Does OpenAI"
     url="https://www.semianalysis.com/p/google-we-have-no-moat-and-neither"
-    spacer
 >
     I've been a passive follower of all the AI stuff happening, consuming updates mainly via Twitter and internal Microsoft stuff. This article highlighted
     the pace at which AI-related tech is advancing, but I thought the most interesting part was the meta-commentary about the differences between building

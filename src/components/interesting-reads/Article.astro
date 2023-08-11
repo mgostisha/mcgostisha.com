@@ -3,22 +3,36 @@ import Link from '../Link.astro';
 
 export interface Props {
     author: string;
+    spacer: boolean;
     title: string;
     url: string;
 }
 
-const {author, title, url } = Astro.props;
+const { author, spacer = false, title, url } = Astro.props;
 ---
 <section class="reads-article">
   <div class="reads-article-link">
     <Link to={url} external>{title}</Link> by {author}
   </div>
   <slot />
+  {spacer ? <hr /> : null}
 </section>
 
 <style>
   .reads-article-link {
     margin-block-end: 0.5rem;
     font-size: var(--font-size-large);
+  }
+
+  hr {
+    margin: var(--site-common-spacer) auto 0 auto;
+    border-width: 0 0 1px 0;
+    width: 2rem;
+  }
+
+  .reads-article:last-child {
+    hr {
+      display: none;
+    }
   }
 </style>

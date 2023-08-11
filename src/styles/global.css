@@ -25,6 +25,7 @@
     --site-top-spacer: 2rem;
     --navbar-height: 75px;
     --prose-width: 70ch;
+    --site-common-spacer: 1.5rem;
 
     /* From Astro */
     --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.05rem);
