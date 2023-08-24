@@ -13,94 +13,98 @@ import Blockquote from '../../components/Blockquote.astro';
 import Link from '../../components/Link.astro';
 
 <InterestingReadsIntro
-    customText="This one's all engineering and books."
+    customText="This one's all engineering and books. I've been going on social media less since my (former) platform of choice is in a rapid
+    freefall towards death, so I haven't come across as many interesting things as I normally would. A generous colleague gave me a Bluesky invite that I've failed to do anything with,
+    I tried Mastodon, I tried Threads, but really I just miss the little place that I'd created and I miss the things that I'd come across while browsing there. I should really give Bluesky a try,
+    but to be honest I've quite enjoyed being on my phone less. /shrug"
 />
 
 <InterestingReadsCategoryHeader>Software Engineering</InterestingReadsCategoryHeader>
 
 <InterestingReadsArticle
-    author="Slava Knyazev"
-    title="A Practical Guide to Not Blocking The Event Loop"
-    url="https://www.bbss.dev/posts/eventloop"
+    author="Nicholas Ray"
+    title="300ms Faster: Reducing Wikipedia's Total Blocking Time"
+    url="https://www.nray.dev/blog/300ms-faster-reducing-wikipedias-total-blocking-time/"
+    spacer
 >
-    This article is just what the title says -- practical. I've found that working on improving performance at a large scale can be as frustrating
-    as it is rewarding at times. Easy enough to see where the problems are, tough to diagnose the root cause of the problem, and even trickier to
-    come up with a fix. I enjoyed the visuals and concrete examples in this article, it's a great place to start with web/JavaScript performance.
+    
 </InterestingReadsArticle>
 
 <InterestingReadsArticle
-    author="Amazon Prime Video Team"
-    title="Scaling up the Prime Video audio/video monitoring service and reducing costs by 90%"
-    url="https://www.primevideotech.com/video-streaming/scaling-up-the-prime-video-audio-video-monitoring-service-and-reducing-costs-by-90"
+    author="Bo Ingram"
+    title="How Discord Stores Trillions of Messages"
+    url="https://discord.com/blog/how-discord-stores-trillions-of-messages"
+    spacer
 >
-    I saw the Prime Video team catching flack for this article on the Twitter after it came out. "LOL, Amazon says not to use Lambdas!" <Link to="https://twitter.com/dvassallo/status/1654881181173952513?s=20" external>"The only
-    reason they used Lambda was because upper management forced them to!"</Link> However, I feel like this was the key quote in the article:
-    <Blockquote>
-        “We designed our initial solution as a distributed system using serverless components (for example, AWS Step Functions or AWS Lambda),
-        which was a good choice for building the service quickly. In theory, this would allow us to scale each service component independently.
-        However, the way we used some components caused us to hit a hard scaling limit at around 5% of the expected load. Also, the overall cost
-        of all the building blocks was too high to accept the solution at a large scale.”
-    </Blockquote>
-    Rethinking your architecture is good. Changing your architecture based on how the product _actually_ scales and is _actually_ used is good.
-    I think <Link to="https://www.allthingsdistributed.com/2023/05/monoliths-are-not-dinosaurs.html" external>this article on Monoliths by Werner Vogels, Amazon CTO</Link>
-    was an informal companion to this technical blog post.
+    
 </InterestingReadsArticle>
 
 <InterestingReadsArticle
-    author="Unidentified Google Researcher"
-    title="Google: 'We Have No Moat, and Neither Does OpenAI"
-    url="https://www.semianalysis.com/p/google-we-have-no-moat-and-neither"
+    author="Marvin Hagemeister"
+    title="Speeding up the JavaScript ecosystem - npm scripts"
+    url="https://marvinh.dev/blog/speeding-up-javascript-ecosystem-part-4/"
+    spacer
 >
-    I've been a passive follower of all the AI stuff happening, consuming updates mainly via Twitter and internal Microsoft stuff. This article highlighted
-    the pace at which AI-related tech is advancing, but I thought the most interesting part was the meta-commentary about the differences between building
-    software in an open-source community, at a startup, or at Google scale. The thoughts about working with the open source communities instead of in competition
-    with them is something that I think can be done better outside of AI as well, especially given that they'll always have the big step up: money.
+    
 </InterestingReadsArticle>
 
 <InterestingReadsArticle
-    author="Yann-Edern Gillet"
-    title="Refining Command Line Interface for efficient design pipelines setup"
-    url="https://yannglt.com/work/specify-cli-experience"
+    author="Sho Kuwamoto"
+    title="What Working at Figma Taught Me About Customer Obsession"
+    url="https://www.lennysnewsletter.com/p/what-working-at-figma-taught-me-about"
+    spacer
 >
-    I admittedly haven't designed a command-line interface (CLI) before. The thought that went into this design impressed me and made me realize
-    how restrictive the design space is for CLIs. This one's worth reading alone as a treatise on respecting the craft and a lens through which you can look
-    at the importance of designing for clarity and the microinteractions that we develop on a daily basis.
+    
 </InterestingReadsArticle>
 
-<InterestingReadsCategoryHeader>Mathematics</InterestingReadsCategoryHeader>
-
 <InterestingReadsArticle
-    author="Jared Wilber"
-    title="Linear Regression"
-    url="https://mlu-explain.github.io/linear-regression/"
+    author="Rauno"
+    title="Web Interface Guidelines"
+    url="https://interfaces.rauno.me/"
+    spacer
 >
-    I straight up hated statistics when I took it in high school. I'm not sure why, but I just couldn't find anything exciting about it. Fast forward
-    a decade (if we're being generous) and now I use it almost every day in both work and hobby. _And_ I like it. This article has some really nice visuals
-    on regression techniques and is a well-written primer on one of the most common tools in the statistical analysis toolbox.
+    
 </InterestingReadsArticle>
 
-<InterestingReadsCategoryHeader>Basketball/Life (?)</InterestingReadsCategoryHeader>
+<InterestingReadsArticle
+    author="Lars Hupel"
+    title="An Introduction to Conflict-Free Replicated Data Types"
+    url="https://lars.hupel.info/topics/crdt/01-intro/"
+    spacer
+>
+    
+</InterestingReadsArticle>
 
 <InterestingReadsArticle
-    author="Sam Hinkie"
-    title="Sam Hinkie's 2016 Philadelphia 76ers Resignation Letter"
-    url="http://www.espn.com/pdf/2016/0406/nba_hinkie_redact.pdf"
+    author="Mozilla Docs Team"
+    title="MDN Web Performance Docs"
+    url="https://developer.mozilla.org/en-US/docs/Web/Performance"
 >
-    Yeah, I don't quote remember how I came across this again either. If you're not into basketball and/or brief basketball history, you can stop
-    around page seven. Before that spot; however, is a joyful read on markets, evaluating their inefficiencies, and how to think about making predictions
-    and evaluating them as their times come to pass. As I said in the intro, I've been getting more into basketball analytics, and the Sam Hinkie "Trust
-    the Process" era is always fun to read about. It's oddly philosophical for a resignation letter, but truly fun and I know I'll read it again soon.
+    
 </InterestingReadsArticle>
 
 <InterestingReadsCategoryHeader>Books</InterestingReadsCategoryHeader>
 
+I've read a lot of books since the last one. Goodreads says it's six. Some good, some bad, but two stood out.
+
 <InterestingReadsArticle
-    author="Jordan Ellenberg"
-    title="How Not To Be Wrong"
-    url="https://www.jordanellenberg.com/book/how-not-to-be-wrong/"
+    author="Hanif Abdurraqib"
+    title="They Can't Kill Us Until They Kill Us"
+    url="https://www.goodreads.com/book/show/33947154-they-can-t-kill-us-until-they-kill-us"
+    spacer
 >
-    I've been slowly making my way through this one. It's an interesting book about the practical uses of mathematics that drive 
-    our decision making, extraordinary (seeming) events, and other uses of math along those lines. My favorite take away thus far
-    has been thinking about more things in term of utility or expected value and how that might change decisions I make. It's a bit
-    long, but if you enjoy math you'll enjoy this book and its fun examples and anecdotes.
+    This was my second read through of They Can't Kill Us Until They Kill Us. Hanif's writing is incredible and second only 
+    to his ability to tell a story. I'd read him write about anything, which is my favorite thing about this book -- you get almost everything.
+    Pop culture from the last millenium, inside looks at emo bands before they were popular, first-hand accounts of what it's like to be
+    Black in a nearly all white city. Heavy at times, but appropriately, meaningfully heavy and beautiful cover to cover.
+</InterestingReadsArticle>
+
+<InterestingReadsArticle
+    author="Susanna Clarke"
+    title="Piranesi"
+    url="https://www.goodreads.com/book/show/50202953-piranesi"
+>
+    I just really liked the setting and didn't really know what I was in for most of the time. It's vivid enough to pull you in and
+    intriguing enough to not want to stop reading. Maybe it's because I hadn't loved the couple books I read before this, but damn if I didn't
+    enjoy her writing style and seeing the environment unfold into the story.
 </InterestingReadsArticle>
