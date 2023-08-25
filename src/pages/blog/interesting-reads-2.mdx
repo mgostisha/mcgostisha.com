@@ -2,9 +2,8 @@
 layout: ../../layouts/Post.astro
 title: 'Interesting Reads, #2'
 description: "A sample of interesting articles, blog posts, and books I've read recently."
-createdAt: '2023-08-11T23:44:09.697Z'
+createdAt: '2023-08-24T21:08:09.697Z'
 updatedAt: null
-draft: true
 ---
 import InterestingReadsIntro from '../../components/interesting-reads/Intro.astro';
 import InterestingReadsCategoryHeader from '../../components/interesting-reads/CategoryHeader.astro';
@@ -13,8 +12,8 @@ import Blockquote from '../../components/Blockquote.astro';
 import Link from '../../components/Link.astro';
 
 <InterestingReadsIntro
-    customText="This one's all engineering and books. I've been going on social media less since my (former) platform of choice is in a rapid
-    freefall towards death, so I haven't come across as many interesting things as I normally would. A generous colleague gave me a Bluesky invite that I've failed to do anything with,
+    customText="This one's almost all engineering and books. I've been going on social media less since my (former) platform of choice is in rapid
+    freefall towards assured death, so I haven't come across as many interesting things as I normally would. A generous colleague gave me a Bluesky invite that I've failed to do anything with,
     I tried Mastodon, I tried Threads, but really I just miss the little place that I'd created and I miss the things that I'd come across while browsing there. I should really give Bluesky a try,
     but to be honest I've quite enjoyed being on my phone less. /shrug"
 />
@@ -27,7 +26,10 @@ import Link from '../../components/Link.astro';
     url="https://www.nray.dev/blog/300ms-faster-reducing-wikipedias-total-blocking-time/"
     spacer
 >
-    
+    I liked that in the last issue I had some articles about practical web performance, and this article's a great example of that.
+    It goes into Total Blocking Time and shows a classic case of fixing what was once perfectly fine code that didn't scale well over time.
+    A lot of code starts performant enough -- okay, maybe not a lot -- but then is ran against more data or in different product use cases
+    than originally imagined. Auditing existing code for perf gains can be just as fruitful as reviewing new code.
 </InterestingReadsArticle>
 
 <InterestingReadsArticle
@@ -36,7 +38,9 @@ import Link from '../../components/Link.astro';
     url="https://discord.com/blog/how-discord-stores-trillions-of-messages"
     spacer
 >
-    
+    I've been trying to casually learn more about distributed systems. This was an interesting read about scaling Discord's message storage
+    beyond scales I've ever had to think much about. I also like their approach in trying to fix things around the problem before
+    diving into a rearchitecture, which is normally expensive and hard to accurately contain/estimate, before doing so. Cool stuff.
 </InterestingReadsArticle>
 
 <InterestingReadsArticle
@@ -45,16 +49,12 @@ import Link from '../../components/Link.astro';
     url="https://marvinh.dev/blog/speeding-up-javascript-ecosystem-part-4/"
     spacer
 >
+    I've very much enjoyed this series of blog posts; it's inspired me to dive head-first into perf problems and just start picking things
+    apart along the way. This was a good example of fixing perf issues where it's death by 1000 cuts instead of a few long tasks or issues.
+    Also an important lesson -- only try to do work on/load the smallest set of what you need.
     
-</InterestingReadsArticle>
-
-<InterestingReadsArticle
-    author="Sho Kuwamoto"
-    title="What Working at Figma Taught Me About Customer Obsession"
-    url="https://www.lennysnewsletter.com/p/what-working-at-figma-taught-me-about"
-    spacer
->
-    
+    An aside: I feel like perf has one of the most vast chasms between the simplicity of the rules and how hard it is in practice. It essentially
+    boils down to a) do less work, b) do work faster, and c) spread the work out (parallelize). Turns out it's not that easy to apply IRL.
 </InterestingReadsArticle>
 
 <InterestingReadsArticle
@@ -63,7 +63,8 @@ import Link from '../../components/Link.astro';
     url="https://interfaces.rauno.me/"
     spacer
 >
-    
+    Not too much to say about this one, just thought it was a nice, easy to reference list of things to keep top-of-mind when developing web interfaces.
+    I'd love articles/lists things like this, especially with the depth provided by links/footnotes.
 </InterestingReadsArticle>
 
 <InterestingReadsArticle
@@ -72,7 +73,9 @@ import Link from '../../components/Link.astro';
     url="https://lars.hupel.info/topics/crdt/01-intro/"
     spacer
 >
-    
+    This is a long but well-written intro to CRDTs. It comes at them from a more mathematical bent, but has unit-ish tests embedded in the series that run against
+    the example code, well drawn diagrams, and mostly I liked the way that it built upon first principles and kept a complex topic will within
+    grasp. CRDTs are freaking cool, too.
 </InterestingReadsArticle>
 
 <InterestingReadsArticle
@@ -80,12 +83,25 @@ import Link from '../../components/Link.astro';
     title="MDN Web Performance Docs"
     url="https://developer.mozilla.org/en-US/docs/Web/Performance"
 >
-    
+    Read through these a little while ago and they were more helpful than I'd remembered. Good place to start if you're interested in learning
+    more about web performance.
+</InterestingReadsArticle>
+
+<InterestingReadsCategoryHeader>Product Things</InterestingReadsCategoryHeader>
+
+<InterestingReadsArticle
+    author="Sho Kuwamoto"
+    title="What Working at Figma Taught Me About Customer Obsession"
+    url="https://www.lennysnewsletter.com/p/what-working-at-figma-taught-me-about"
+>
+    I'm a sucker for articles talking about interacting with users and the importance of doing so. I'm also a huge advocate of user support
+    being everyone's job, regardless of the size of the company/product or role. Prioritize user happiness over everything else.
 </InterestingReadsArticle>
 
 <InterestingReadsCategoryHeader>Books</InterestingReadsCategoryHeader>
 
-I've read a lot of books since the last one. Goodreads says it's six. Some good, some bad, but two stood out.
+I've read a lot of books since the last issue. Goodreads says it's six. Some good, some bad, one so god awful that I can't believe I even made it 30% of
+the way through before quitting. Two stood out.
 
 <InterestingReadsArticle
     author="Hanif Abdurraqib"
@@ -94,7 +110,7 @@ I've read a lot of books since the last one. Goodreads says it's six. Some good,
     spacer
 >
     This was my second read through of They Can't Kill Us Until They Kill Us. Hanif's writing is incredible and second only 
-    to his ability to tell a story. I'd read him write about anything, which is my favorite thing about this book -- you get almost everything.
+    to his ability to tell a story. I'd read him on anything, which is my favorite thing about this book -- you get almost everything.
     Pop culture from the last millenium, inside looks at emo bands before they were popular, first-hand accounts of what it's like to be
     Black in a nearly all white city. Heavy at times, but appropriately, meaningfully heavy and beautiful cover to cover.
 </InterestingReadsArticle>
